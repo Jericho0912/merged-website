@@ -4,7 +4,7 @@ from django.utils import timezone
 import pytz
 from datetime import time , date
 from .models import *
-from .forms import addlist , updateinfo ,CreateUserForm,Createclient
+from .forms import addlist , updateinfo ,CreateUserForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
@@ -162,12 +162,13 @@ def logoutUser(request):
 #CLIENT SIDE
 
 
-@login_required(login_url='SignIn')
+# @login_required(login_url='SignIn')
 def clientHome(request):
     return render(request, "my_thesis/Home.html")
 
-@login_required(login_url='SignIn')
-def SignIn(request):
+# @login_required(login_url='SignIn')
+def SignIn(request): 
+    
     if request.method == 'POST':
        username=request.POST.get('username')
        password=request.POST.get('password')
@@ -176,28 +177,30 @@ def SignIn(request):
        
        if user is not None:
           login(request, user)
-          return redirect('Home')
+          return redirect('Client_Dash')
        else:
           messages.info(request, 'username OR password is incorrect')
 
     context = {}
     return render(request, 'my_thesis/SignIn.html', context)
+
     
     # return render(request,"my_thesis/SignIn.html")
 
 def SignUp(request):
-    form = Createclient()
+    form = CreateUserForm()
 
     if request.method == 'POST':
-        form = Createclient(request.POST)
+        form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
             user = form.cleaned_data.get('username')
             messages.success(request,'Account was Created for ' + user)
-            return redirect('SignIn')
+            return redirect('SignUp')
             
     context = {'form':form}
-    return render(request,"my_thesis/SignUp.html",context)
+    return render(request, 'my_thesis/SignUp.html', context)
+
 
 
 def Features_Insights(request):
@@ -210,7 +213,7 @@ def AboutUs_Contact(request):
 def Client_Dash(request):
     return render(request, "my_thesis/Client_Dash.html")
 
-@login_required(login_url='SignIn')
+# @login_required(login_url='SignIn')
 def logoutUser(request):
    logout(request)
    return redirect('Home')

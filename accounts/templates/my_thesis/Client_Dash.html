@@ -170,14 +170,14 @@
 
 <section class="p-5" id="FirstBox">
     <div class="WelLog" style="text-align: right;">
-       <p id="Welcome">Welcome Back, John Doe |<a id="LogOut"> <span class="Blue_textbot2" id="SIGNUP_LINK" class="link-primary link-offset-2 link-underline link-underline-opacity-0"> <a href="{% url 'Home' %}"> Logout</a></p>
+       <p id="Welcome">Welcome Back, {{request.user}} |<a class="nav-link" href="{% url "logout" %}">LogOut</a></p>
     </div>
 </section>
 
 <section class="p-5 mb-2" id="SecondBox">
     <!-- SECOND CONTAINER -->
         <div class="TextBox1">
-            <p id="BoxOne_FirstLine">Hi John Doe!</p>
+            <p id="BoxOne_FirstLine">Hi {{request.user}}</p>
             <p id="BoxOne_SecondLine">We're glad you're here</p>
         </div>
 </section>

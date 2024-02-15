@@ -33,10 +33,10 @@ class clientinfo(models.Model):
         return self.fname
     
 
-# for connections
-class SensorData(models.Model):
-    ldr = models.IntegerField(default=0)
-    timespamp = models.DateTimeField(auto_now_add=True)
+# # for connections
+# class SensorData(models.Model):
+#     ldr = models.IntegerField(default=0)
+#     timespamp = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self) -> str:
-        return self.ldr
+#     def __str__(self) -> str:
+#         return self.ldr

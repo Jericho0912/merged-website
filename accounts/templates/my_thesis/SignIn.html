@@ -126,50 +126,79 @@
   text-align: justify;
 }
 
+#TextSign{
+  font-family: 'Inter', sans-serif;
+  color: #2895E3;
+  font-weight: bold;
+  margin-left: 250px;
+}
+.signin_box{
+  background-color: #2895E3;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: 'Inter', sans-serif;
+            height: 50px;
+            width: calc(100% - 0%); /* Adjust width to match the textboxes */
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-left: 0; /* Adjust left margin */
+}
+
+.login_btn{
+            font-size: 16px;
+            font-weight: bold;
+            font-family: 'Inter', sans-serif;
+            margin-top: 6px;
+}
+
 </style>
 
 <body>
 
-<div class="flex_main">
-  <img class="BoxOne_Image1 rounded float-start" src="{% static 'my_thesis/images/signin/SIGNUP_SIGNIN_BG.png' %}" width="2570px">
+  <div class="flex_main">
+    <img class="BoxOne_Image1 rounded float-start" src="{% static 'my_thesis/images/signin/SIGNUP_SIGNIN_BG.png' %}" width="2570px">
 
-  <section class="p-5" id="FirstBox">
-    <div class="flex">
+    <section class="p-5" id="FirstBox">
+        <div class="flex">
             <div class="TextBox2">
                 <img class="BoxOne_Image2" src="{% static 'my_thesis/images/home/LogoHydroFlow.png' %}">
-                <p> Sign in with your HydroFlow account </p>
+                <p id="TextSign"> Sign In</p>
                 <form method="POST" action="">
-                  {% csrf_token %}
-                  <div class="input-group mb-3">
-                    <div class="input-group-append">
-                      <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    {% csrf_token %}
+                    <div class="input-group mb-3">
+                        <div class="input-group-append">
+                            <!-- <span class="input-group-text"><i class="fas fa-user"></i></span> -->
+                        </div>
+                        <input type="text" name="username" placeholder="Username..." class="form-control">
                     </div>
-                    <input type="text" name="username" placeholder="Username..." class="form-control">
-                  </div>
-                  <div class="input-group mb-2">
-                    <div class="input-group-append">
-                      <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    <div class="input-group mb-2">
+                        <div class="input-group-append">
+                            <!-- <span class="input-group-text"><i class="fas fa-key"></i></span> -->
+                        </div>
+                        <input type="password" name="password" placeholder="Password..." class="form-control">
                     </div>
-                      <input type="password" name="password" placeholder="Password..." class="form-control" >
+
+                    <div class="signin_box"> <!-- Sign-in button box -->
+                      <div class="d-flex justify-content-center mt-3 login_container">
+                          <input class="btn login_btn" type="submit" value="Sign In">
+                      </div>
                   </div>
-      
-                    <div class="d-flex justify-content-center mt-3 login_container">
-                       <input class="btn login_btn" type="submit" value="sigin">
-                       </div>
                 </form>
             </div>
-            <br>
-            {% for message in messages %}
-            <center>
-      <p>{{message}}</p>
-              </center>                  
-            {% endfor %}
-    <div class="mt-4">
-      <div class="d-flex justify-content-center links">
-        Don't have an account? <a href="{% url 'SignUp' %}" class="ml-2">Sign Up</a>
-      </div>
-    </div>
-  </section>
+        </div>
+        {% for message in messages %}
+        <center>
+            <p>{{message}}</p>
+        </center>
+        {% endfor %}
+        <div class="mt-4">
+            <div class="d-flex justify-content-center links">
+                Don't have an account? <a href="{% url 'SignUp' %}" class="ml-2">Sign Up</a>
+            </div>
+        </div>
+    </section>
 
 </div>
 

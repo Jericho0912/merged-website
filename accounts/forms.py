@@ -1,8 +1,8 @@
 from django.forms import ModelForm
-from .models import Product ,  userinfo , clientinfo
+from .models import Product ,  userinfo , clientinfo 
 from django import forms 
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,Group
 
 class addlist(ModelForm):
     class Meta:
@@ -48,7 +48,9 @@ class CreateUserForm(UserCreationForm):
         fields = ['username','email','password1','password2']
         
 
-class Createclient(UserCreationForm):
-    class Meta:
-        model = User
-        fields = [ 'username','email','password1','password2']
+#client
+
+# class Createclient(UserCreationForm):
+#     class Meta:
+#         model = User
+#         fields = [ 'username','email','password1','password2']
