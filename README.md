@@ -1,2 +1,0 @@
-# ADMIN
-Django admin side
