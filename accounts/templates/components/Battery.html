@@ -1,0 +1,97 @@
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+  }
+  .chart-container {
+    margin-bottom: 20px;
+    width: 500px;
+    color: #18468B;
+    font-weight: bold;
+    position: relative; /* Added position relative for positioning the battery percentage */
+  }
+
+  .battery-container {
+    display: flex;
+    align-items: center; /* Center horizontally */
+    justify-content: space-between;
+  }
+
+  .battery-icon {
+    width: 120px;
+    height: 60px;
+    border: 2px solid #333;
+    display: flex;
+    /* Remove align-items for horizontal fill */
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  .battery-level {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0; /* Change left to right for horizontal fill */
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .battery-percentage {
+    font-size: 24px;
+    font-weight: bold;
+  }
+</style>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- <div class="chart-container">
+      <h2>Energy Chart</h2>
+      <canvas id="energyChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h2>RPM Chart</h2>
+      <canvas id="rpmChart"></canvas>
+    </div> -->
+    <div class="chart-container">
+      <div id="batteryContainer">
+
+      </div>
+      <h2>Battery percentage</h2>
+      <div id="batteryContainer">
+          <div class="battery-icon">
+            <div class="battery-level"></div>
+          </div>
+          <div class="battery-percentage">--%</div>
+        </div>
+  </div>
+
+<script>
+function updateBatteryStatus(percentage) {
+  const batteryLevelElement = document.querySelector('.battery-level');
+  const batteryPercentageElement = document.querySelector('.battery-percentage');
+
+  // Set battery level width and color based on percentage
+  batteryLevelElement.style.width = `${percentage}%`;
+  batteryLevelElement.style.backgroundColor = getColorByPercentage(percentage);
+
+  // Update battery percentage text
+  batteryPercentageElement.textContent = `${percentage}%`;
+}
+
+function getColorByPercentage(percentage) {
+  if (percentage >= 80) {
+    return 'green';
+  } else if (percentage >= 50) {
+    return 'orange';
+  } else {
+    return 'red';
+  }
+}
+
+// Example: Set initial battery percentage
+const initialBatteryPercentage = 50;
+updateBatteryStatus(initialBatteryPercentage);
+</script>

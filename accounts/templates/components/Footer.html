@@ -1,0 +1,157 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'my_thesis/css/Footer.css' %}">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    </head>
+
+    <style>
+    .FooterMain{
+        background-color: #25677B;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .flex{
+        display: flex;
+        color: white;
+        margin-top: 20px;
+    }
+
+    .WhatWeDo{
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    .Features{
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    .Insights{
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    .AboutUs{
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    .Column1{
+        margin-right: auto;
+    }
+
+    .BoxFoot1{
+        color: white;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .BoxFoot2{
+        color: white;
+        margin-right: auto;
+        margin-bottom: auto;
+    }
+
+    .BoxFoot3{
+        color: white;
+        margin-right: auto;
+        margin-bottom: auto;
+    }
+
+    .Column4{
+        margin-left: auto;
+        margin-bottom: auto;
+    }
+
+    .BoxFoot4{
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .BoxFoot5{
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .SocialIcons{
+        margin-top: -10px;
+    }
+
+    .ContactNumber{
+        margin-top: -15px;
+        font-size: 15px;
+        font-weight: 200;
+    }
+
+    .EmailIcons{
+        margin-top: -10px;
+    }
+
+    .ALR_LINE{
+        color: white;
+        font-size: 10px;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 80px;
+        border-top:1px solid
+    }
+    </style>
+<body>
+    <footer class="FooterMain p-5">
+            <div class="flex">
+                <div class="Column1">
+                    <div class="BoxFoot1">
+                        <p class="WhatWeDo">What We Do</p>
+                        <p> Features<br> Insights<br> About Us</p>
+                        <p class="Features">Features</p>
+                        <p> Start Or Modify Device<br> Bills And Payments<br> Outage And Incident<br> Turbine Status<br> Energy Efficiency<br> Contact Support</p>
+                    </div>
+                </div>
+                <div class="BoxFoot2">
+                    <p class="Insights">Insights</p>
+                    <p> Insight<br> Videos<br> Facts</p>
+                </div>
+                <div class="BoxFoot3">
+                    <p class="AboutUs">About Us</p>
+                    <p> Researchers<br> Contact</p>
+                </div>
+                <div class="Column4">
+                    <div class="BoxFoot4">
+                        <p>Follow Us</p>
+                        <img class="SocialIcons" src="{% static 'my_thesis/images/home/FOLLOWUS_ICONS.png' %}" width="250">
+                    </div>
+                    <div class="BoxFoot5">
+                        <p>Contact Us <br></p>
+                        <p class="ContactNumber">+0976-034-4395</p>
+                        <img class="EmailIcons" src="{% static 'my_thesis/images/home/EMAIL_ICONS.png' %}" width="290">
+                    </div>
+                </div>
+            </div>
+            <div class="ALR_LINE">  
+                &copy; ITECH - DCPet 3-2. Group 1 - HydroFlow: Cross-Flow Turbine Energy Generation And Cloud-Based Analytics.
+            </div>
+    </footer>
+
+            <div class="">{%block content%} {%endblock%}</div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      </header>
+</body>

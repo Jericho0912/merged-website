@@ -1,0 +1,47 @@
+<div class="container-fluid m-5 ">
+
+  <div class="row">
+              <div class="col-md-4 text-center">
+                <div class="card">
+                  <div class="card-header">
+                    Number of users
+                  </div>
+                  <div class="card-body">
+                    <h1>{{ total_users }}</h1>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-2 text-center">
+                <div class="card">
+                  <div class="card-header">
+                    Total products
+                  </div>
+                  <div class="card-body">
+                    <h1>{{ total_products }}</h1>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5 text-center">
+                <div class="card">
+                  <div class="card-header">
+                    Date and time today
+                  </div>
+                  <div class="card-body">
+                    <h1> {{ today_formatted }} {{now_formatted}}</h1>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+
+<script>
+  async function updateRealTimeDateAndTime() {
+    const dateAndTime = await getRealTimeDateAndTime();
+    document.querySelector('#date-and-time-today').innerHTML = dateAndTime;
+  }
+  
+  setInterval(updateRealTimeDateAndTime, 1000);
+  </script>
+  

@@ -1,0 +1,177 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+/* FIRST CONTAINER */
+#FirstBox{
+    background-color: #15527D;
+}
+
+#BoxOne_FirstLine{
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 64px;
+}
+
+#BoxOne_SecondLine{
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 64px;
+}
+
+#BoxOne_TextOne{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.TextBox1{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.BoxOne_Image1{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* SECOND CONTAINER */
+
+#SecondBox{
+    background-color: #FFFFFF;
+    background-size: cover;
+}
+
+#SecondBox_HeadOne{
+    color: #18468B;
+    font-weight: Bold;
+    font-size: 36px;
+}
+
+#SecondBox_TextOne{
+    color: #18468B;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+#Home_Features{
+    color: #FFFFFF;
+    background-color: #FF8A00;
+    font-weight: Bold;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 20px;
+}
+
+.flex2{
+    display: flex;
+    align-items: center;
+}
+
+.BoxOne_Image2{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.TextBox2{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* THIRD CONTAINER */
+
+#ThirdBox{
+    background-color: #FF8A00;
+    background-size: cover;
+}
+
+#ThirdBox_HeadOne{
+    color: #FFFFFF;
+    font-weight: Bold;
+    font-size: 58px;
+}
+
+#ThirdBox_TextOne{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+#Home_Insights{
+    color: #FFFFFF;
+    background-color: #18468B;
+    font-weight: Bold;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 20px;
+}
+
+.flex3{
+    display: flex;
+    align-items: center;
+}
+
+.BoxOne_Image3{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.TextBox3{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* FORTH CONTAINER */
+
+#ForthBox{
+    background-color: #FFFFFF;
+    background-size: cover;
+}
+
+#ForthBox_HeadOne{
+    color: #FF8A00;
+    font-weight: Bold;
+    font-size: 58px;
+}
+
+#ForthBox_TextOne{
+    color: #484646;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+#Home_AboutUs{
+    color: #FFFFFF;
+    background-color: #FF8A00;
+    font-weight: Bold;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 20px;
+}
+
+.flex4{
+    display: flex;
+    align-items: center;
+}
+
+.TextBox4{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.BoxOne_Image4{
+    margin-left: auto;
+    margin-right: auto;
+}

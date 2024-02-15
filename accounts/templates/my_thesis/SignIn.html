@@ -1,0 +1,178 @@
+{% extends "components/NavBar.html" %}{% block title%} Sign In {% endblock  %}
+
+{% block head %} {% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'my_thesis/css/AboutUs.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<style>
+
+/* FIRST CONTAINER */
+
+.flex_main{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 0;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.BoxOne_Image2{
+    display:block;
+    margin-left: 10px;
+    margin-right: auto;
+    margin-bottom: 100px;
+    width: 550px;
+}
+
+.TextBox2{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+}
+
+#SIGNIN{
+    background-color: #2895E3;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bolder;
+    padding-top: 10px;
+    font-family: 'Inter', sans-serif;
+    height:50px;
+    width:100px;
+    margin-top: 2px;
+    margin-left: 8px;
+}
+
+.EMAILADD{
+    color: #CDCDCD;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: -30px;
+}
+
+.PW{
+    color: #CDCDCD;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+#SIGNUP_LINK{
+  color: #2895E3;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: -20px;
+}
+
+.Blank{
+  margin-top: 180px;
+  margin-bottom: -80px;
+  border-top:1px solid
+}
+
+.textbot_1{
+  margin-top: 120px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 80px;
+  margin-right: auto;
+  
+}
+
+.Blue_textbot1{
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2895E3;
+  text-align: justify;
+}
+
+.textbot_2{
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  margin-left: 80px;
+  margin-right: auto;
+}
+
+.Blue_textbot2{
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  color: #2895E3;
+  text-align: justify;
+}
+
+</style>
+
+<body>
+
+<div class="flex_main">
+  <img class="BoxOne_Image1 rounded float-start" src="{% static 'my_thesis/images/signin/SIGNUP_SIGNIN_BG.png' %}" width="2570px">
+
+  <section class="p-5" id="FirstBox">
+    <div class="flex">
+            <div class="TextBox2">
+                <img class="BoxOne_Image2" src="{% static 'my_thesis/images/home/LogoHydroFlow.png' %}">
+                <p> Sign in with your HydroFlow account </p>
+                <form method="POST" action="">
+                  {% csrf_token %}
+                  <div class="input-group mb-3">
+                    <div class="input-group-append">
+                      <span class="input-group-text"><i class="fas fa-user"></i></span>
+                    </div>
+                    <input type="text" name="username" placeholder="Username..." class="form-control">
+                  </div>
+                  <div class="input-group mb-2">
+                    <div class="input-group-append">
+                      <span class="input-group-text"><i class="fas fa-key"></i></span>
+                    </div>
+                      <input type="password" name="password" placeholder="Password..." class="form-control" >
+                  </div>
+      
+                    <div class="d-flex justify-content-center mt-3 login_container">
+                       <input class="btn login_btn" type="submit" value="sigin">
+                       </div>
+                </form>
+            </div>
+            <br>
+            {% for message in messages %}
+            <center>
+      <p>{{message}}</p>
+              </center>                  
+            {% endfor %}
+    <div class="mt-4">
+      <div class="d-flex justify-content-center links">
+        Don't have an account? <a href="{% url 'SignUp' %}" class="ml-2">Sign Up</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+</body>
+
+{%endblock%}

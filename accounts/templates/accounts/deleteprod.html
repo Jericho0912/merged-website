@@ -1,0 +1,19 @@
+{% extends "accounts/main.html" %}
+{% load static %}
+{% include 'accounts/navbar.html' %}
+
+{% block content%}
+
+<center>
+    <h1>Are you sure you want to delete this {{ info }}?</h1>
+    <br>
+
+    <form action="" method="POST">  
+        {% csrf_token %}
+        {{forms}}
+        <input type="submit" name="submit">
+    </form>
+
+</center>
+
+{% endblock content %}

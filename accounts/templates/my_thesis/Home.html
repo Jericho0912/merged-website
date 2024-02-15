@@ -1,0 +1,290 @@
+{% extends "components/NavBar.html" %} {% block title%} {% load static %} What We Do? {% endblock  %}
+
+{% block content %}
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'my_thesis/css/Home.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+<link rel="icon" href="{% static 'my_thesis/images/home/LogoHydroFlow.png' %}" />
+</head>
+<style>
+body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+/* FIRST CONTAINER */
+#FirstBox{
+    background-color: #15527D;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: -48px;
+}
+
+#BoxOne_FirstLine{
+    color: #FFFFFF;
+    font-weight: 500;
+    font-size: 64px;
+}
+
+#BoxOne_SecondLine{
+    color: #FFFFFF;
+    font-weight: 900;
+    font-size: 64px;
+}
+
+#BoxOne_TextOne{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    margin-bottom: -15px;
+}
+
+.TextBox1{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 70px;
+}
+
+.BoxOne_Image1{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* SECOND CONTAINER */
+
+#SecondBox{
+    background-color: #FFFFFF;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+}
+
+#SecondBox_HeadOne{
+    color: #18468B;
+    font-weight: 900;
+    font-size: 36px;
+}
+
+#SecondBox_HeadTwo{
+    color: #18468B;
+    font-weight: 900;
+    font-size: 36px;
+}
+
+#SecondBox_HeadThree{
+    color: #18468B;
+    font-weight: 900;
+    font-size: 36px;
+}
+
+#SecondBox_TextOne{
+    color: #18468B;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+#Home_Features{
+    color: #FFFFFF;
+    background-color: #FF8A00;
+    font-weight: bolder;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 20px;
+}
+
+.flex2{
+    display: flex;
+    align-items: center;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
+.BoxOne_Image2{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.TextBox2{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* THIRD CONTAINER */
+
+#ThirdBox{
+    background-color: #FF8A00;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+}
+
+#ThirdBox_HeadOne{
+    color: #FFFFFF;
+    font-weight: Bold;
+    font-size: 58px;
+}
+
+#ThirdBox_TextOne{
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+#Home_Insights{
+    color: #FFFFFF;
+    background-color: #18468B;
+    font-weight: bolder;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 20px;
+}
+
+.flex3{
+    display: flex;
+    align-items: center;
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
+.BoxOne_Image3{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.TextBox3{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* FORTH CONTAINER */
+
+#ForthBox{
+    background-color: #FFFFFF;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+}
+
+#ForthBox_HeadOne{
+    color: #FF8A00;
+    font-weight: Bold;
+    font-size: 58px;
+}
+
+#ForthBox_TextOne{
+    color: #484646;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+#Home_AboutUs{
+    color: #FFFFFF;
+    background-color: #FF8A00;
+    font-weight: bolder;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 20px;
+}
+
+.flex4{
+    display: flex;
+    align-items: center;
+    margin-top: -54px;
+    margin-bottom: -55px;
+}
+
+.TextBox4{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.BoxOne_Image4{
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+<body>
+
+<!-- FIRST CONTAINER -->
+<section class="p-5" id="FirstBox">
+        <div class="flex">
+                <div class="TextBox1">
+                        <h1 id="BoxOne_FirstLine">HydroFlow</h1>
+                        <h1 id="BoxOne_SecondLine">Energy Flows <br> Where Water Goes</h1>
+                        <p id="BoxOne_TextOne"> We create game-changing jewels of sustainable growth and <br> development, water is life, but electricity is our heartbeat.</p>
+                </div>
+                <img class="BoxOne_Image1" src="{% static 'my_thesis/images/home/BOX1_IMAGE.png' %}" width="480">
+        </div>
+</section>
+
+<!-- SECOND CONTAINER -->
+<section class="p-5" id="SecondBox">
+        <div class="flex2">
+                <!-- SUBSTITUTE LANG ITO KASI WALA PA VIDEO--> <img class="BoxOne_Image2" src="{% static 'my_thesis/images/home/BOX1_IMAGE.png' %}">
+                <div class="TextBox2">
+                        <h1 id="SecondBox_HeadOne">We Design, Install<br></h1>
+                        <h1 id="SecondBox_HeadTwo">and Change Customer<br></h1>
+                        <h1 id="SecondBox_HeadThree">Conservation...</h1>
+                        <p id="SecondBox_TextOne"> We design our device in the highest form  for<br> your home. Within billions of data, our<br> Engineers will make sure your data is<br>
+                        accurate, efficient, and secure at all times.<br> Harness the craft and experience its feature...</p> <br>
+                        <a class="btn" href="{% url 'Features_Insights' %}" id="Home_Features">FEATURES</a>
+                </div>
+        </div>
+</section>
+
+<!-- THIRD CONTAINER -->
+<section class="p-5" id="ThirdBox">
+        <div class="flex3">
+                <!--DITO YONG MAY 3RD PICTURE SHIZZ--> <img class="BoxOne_Image3" src="{% static 'my_thesis/images/home/BOX3_IMAGE.png' %}">
+                <div class="TextBox3">
+                        <h1 id="ThirdBox_HeadOne">Better Insights</h1>
+                        <p id="ThirdBox_TextOne"> We believe in harnessing the power of water and electricity<br> to improve and deliver every household needs. 
+                        Its a real<br> game-changer that helps you navigate and generate, see<br> how we can help you for your everyday needs.</p> <br>
+                        <a class="btn" href="{% url 'Features_Insights' %}" id="Home_Insights">INSIGHTS</a>
+                </div>
+        </div>
+        
+</section>
+
+<!-- FORTH CONTAINER -->
+<section class="p-5" id="ForthBox">
+        <div class="flex4">
+                <div class="TextBox4">
+                        <h1 id="ForthBox_HeadOne">True Innovation</h1>
+                        <p id="ForthBox_TextOne"> We are the researchers, inventors and creator of HydroFlow,<br> and we believe in unlocking the limitless potential 
+                        of growth<br> and energy transforming life as we know it.</p> <br>
+                        <a class="btn" href="{% url 'AboutUs_Contact' %}" id="Home_AboutUs">ABOUT US</a>
+                </div>
+                <!--DITO YONG MAY 4TH PICTURE SHIZZ--><img class="BoxOne_Image1" src="{% static 'my_thesis/images/home/BOX4_IMAGE.png' %}">
+        </div>
+        
+</section>
+
+<footer>
+        {% include 'components/Footer.html' %}
+</footer>
+
+
+</body>
+</html>
+
+{%endblock%}

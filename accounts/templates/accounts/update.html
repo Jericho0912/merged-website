@@ -1,0 +1,43 @@
+{% extends "accounts/main.html" %}
+{% load static %}
+{% include 'accounts/navbar.html' %}
+
+{% block content%}
+
+<center>
+    <h1> This is your information </h1>
+    <br><br>
+    {% if submitted %}
+        <p>Updated!!</p>
+    {% else %}
+        <form action="" method="POST">
+            {% csrf_token %} 
+            <div class="form-group">
+                <label for="fname">First Name:</label>
+                {{ form.fname }}
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="lname">Last Name:</label>
+                {{ form.lname }}
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                {{ form.phone }}
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                {{ form.email }}
+            </div>
+            <br>
+            <input type="submit" name="submit" class="btn btn-success">
+        </form>
+
+    {% endif %}
+</center>
+
+
+
+{% endblock content %}

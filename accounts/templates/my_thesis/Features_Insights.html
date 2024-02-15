@@ -1,0 +1,369 @@
+{% extends "components/NavBar.html" %} {% block title%} Features & Insights {% endblock  %}
+
+{% block content %}
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'my_thesis/css/Features.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+/* FIRST CONTAINER */
+
+#FirstBox{
+    background-color: #FFFFFF;
+    position: relative;
+  }
+
+#BoxOne_FirstLine{
+    margin-bottom: 100px;
+    color: #15527D;
+    font-weight: bolder;
+    font-size: 64px;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxOne_SecondLine{
+    color: #15527D;
+    font-weight: bolder;
+    font-size: 48px;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxOne_TextOne{
+    color: #198DE0;
+    font-weight: bolder;
+    font-size: 24px;
+    font-family: 'Inter', sans-serif;
+}
+
+.flex{
+    display: flex;
+    margin-bottom: -70px;
+
+}
+
+.BoxOne_Image1{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -100px;
+}
+
+.TextBox1{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* SECOND CONTAINER */
+
+#SecondBox{
+    background-color: #FFFFFF;
+    position: relative;
+  }
+
+.flex2{
+    display: flex;
+}
+
+.TextBox11{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.TextBox22{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#BoxTwo_HBullets1{
+    color: #18468B;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxTwo_Bullets1{
+    color: #198DE0;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxTwo_HBullets2{
+    color: #18468B;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxTwo_Bullets2{
+    color: #198DE0;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxTwo_HBullets3{
+    color: #18468B;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxTwo_Bullets3{
+    color: #198DE0;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+.TextBox22{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#BoxTwo_HBullets11{
+    color: #18468B;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxTwo_Bullets11{
+    color: #198DE0;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxTwo_HBullets22{
+    color: #18468B;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxTwo_Bullets22{
+    color: #198DE0;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxTwo_HBullets33{
+    color: #18468B;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxTwo_Bullets33{
+    color: #198DE0;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+/* THIRD CONTAINER */
+
+#ThirdBox{
+    background-color: #FF7422;
+    position: relative;
+    color: #FFFFFF;
+    font-size: 64px;
+    font-weight: 900;
+    font-family: 'Inter', sans-serif;
+  }
+
+.Insights_Head1{
+    display: flex;
+    margin-left: 60px;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* FORTH CONTAINER */
+#BoxTwo_HBullets1111{
+    color: #198DE0;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxTwo_Bullets1111{
+    color: #198DE0;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxTwo_HBullets2222{
+    color: #198DE0;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+#BoxTwo_Bullets2222{
+    color: #198DE0;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+}
+
+.flex4{
+    display: flex;
+}
+
+.TextBox1111{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.TextBox2222{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.BoxFour_Image3{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
+
+<body>
+
+<section class="p-5 mb-2" id="FirstBox">
+    <!-- FIRST CONTAINER -->
+    <div class="flex">
+        <div class="TextBox1">
+            <p id="BoxOne_FirstLine">FEATURES</p>
+            <p id="BoxOne_SecondLine">FEATURES</p>
+            <p id="BoxOne_TextOne"> Cross-flow turbines are a versatile and efficient way to<br> generate renewable energy from water currents. 
+            Cloud-<br>based analytics can help to optimize turbine performance<br> and maximize energy output. </p>
+        </div>
+        <img class="BoxOne_Image1" src="{% static 'my_thesis/images/features/BOX1_IMAGE1.png' %}" width="600">
+    </div>
+</section>
+
+<section class="p-5 mb-2" id="SecondBox">
+    <!-- SECOND CONTAINER -->
+    <div class="flex2">
+        <div class="TextBox11">
+            <p id="BoxTwo_HBullets1">Start or Modify Device</p>
+            <ul id="BoxTwo_Bullets1">
+                <li>Start or stop your device</li>
+                <li>Change your device settings</li>
+                <li>View schedules of the device</li>
+              </ul>  
+            <p id="BoxTwo_HBullets2">Bills and Payment</p>
+            <ul id="BoxTwo_Bullets2">
+                <li>View your current and past bills</li>
+                <li>View estimation of bills going<br> due</li>
+                <li>Set up bill payment goal</li>
+              </ul>  
+            <p id="BoxTwo_HBullets3">Outage and Incident</p>
+            <ul id="BoxTwo_Bullets3">
+                <li>View current outages and<br> incidents in your area</li>
+                <li>Get updates on the status of<br> outages and incidents</li>
+                <li>Report an outage or incident</li>
+              </ul>  
+        </div>
+        <div class="TextBox22">
+            <p id="BoxTwo_HBullets11">Turbine Status</p>
+            <ul id="BoxTwo_Bullets11">
+                <li>View the real-time status of your<br> turbine</li>
+                <li>See how much energy your<br> turbine is producing</li>
+                <li>Get alerts if there are any<br> problems with your turbine</li>
+              </ul>  
+            <p id="BoxTwo_HBullets22">Energy Efficiency</p>
+            <ul id="BoxTwo_Bullets22">
+                <li>View your energy efficiency</li>
+                <li>Track your energy usage over<br> time</li>
+                <li>Set energy consumption goals</li>
+              </ul>  
+            <p id="BoxTwo_HBullets33">Contact Support</p>
+            <ul id="BoxTwo_Bullets33">
+                <li>Get help with your device</li>
+                <li>Ask questions about your bill or<br> payment</li>
+                <li>Report a problem with your<br> outage or incident</li>
+              </ul>  
+        </div>
+    </div>
+</section>
+
+<section class="p-5" id="ThirdBox">
+    <p class="Insights_Head1">INSIGHTS</p>
+</section>
+
+<section class="p-5" id="ForthBox">
+    <div class="flex4">
+        <div class="TextBox1111">
+            <img class="BoxFour_Image1" src="{% static 'my_thesis/images/features/BOX4_IMAGE1.png' %}" width="600">
+            <p id="BoxTwo_HBullets1111">Insights for a cleaner, more<br> sustainable future.</p>
+            <ul id="BoxTwo_Bullets1111">
+                <li>Start or stop your device</li>
+                <li>Track your water usage and energy generation<br> 
+                over time to identify trends and areas for<br>
+                improvement.</li>
+                <li>See how much water each appliance and fixture<br>
+                is using and how much energy your turbine is<br>
+                producing.</li>
+                <li>Get alerts if you have a leak or if your turbine is<br>
+                not performing optimally.</li>
+                <li>Compare your water usage and energy<br>
+                generation to your neighbors'.</li>
+                <li>Get tips on how to save water and generate<br>
+                more energy.</li>
+                <li>View schedules of this device</li>
+            </ul>  
+        </div>
+        <div class="TextBox2222">
+            <img class="BoxFour_Image2" src="{% static 'my_thesis/images/features/BOX4_IMAGE2.png' %}" width="600">
+            <p id="BoxTwo_HBullets2222">The future of water and energy<br> conservation.</p>
+            <ul id="BoxTwo_Bullets2222">
+                <li>Reduced water and energy bills</li>
+                <li>Real-time insights into water usage and energy<br> 
+                generation</li>
+                <li>Early detection of leaks</li>
+                <li>Easy installation and maintenance</li>
+                <li>Distributed generation of electricity</li>
+                <li>Reduced reliance on the power grid</li>
+                <li>Increased resilience to climate change and other<br>
+                disruptions</li>
+            </ul>  
+        </div>
+    </div>
+    <!-- SUBSTITUTE LANG ITO KASI WALA PA VIDEO-->
+    <img class="BoxFour_Image3" src="{% static 'my_thesis/images/features/BOX4_IMAGE2.png' %}" width="600">
+</section>
+
+    <footer>
+        {% include 'components/Footer.html' %}
+    </footer>
+
+</body>
+</html>
+
+{%endblock%}
