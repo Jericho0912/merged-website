@@ -130,12 +130,12 @@ def registerPage(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-            user = form.cleaned_data.get('username')
+            user = form.cleaned_data.get('user')
             messages.success(request,'Account was Created for ' + user)
-            return redirect('login')
+            return redirect('SignIn')
             
     context = {'form':form}
-    return render(request, 'accounts/register.html', context)
+    return render(request, 'my_thesis/SignUp.html', context)
 
 def loginPage(request): 
     
@@ -147,12 +147,12 @@ def loginPage(request):
        
        if user is not None:
           login(request, user)
-          return redirect('home')
+          return redirect('Client_Dash')
        else:
           messages.info(request, 'username OR password is incorrect')
 
     context = {}
-    return render(request, 'accounts/login.html', context)
+    return render(request, 'my_thesis/SignIn.html', context)
 
 @login_required(login_url='login')
 def logoutUser(request):
@@ -170,39 +170,39 @@ def clientHome(request):
     return render(request, "my_thesis/Home.html")
 
 # @login_required(login_url='SignIn')
-def SignIn(request): 
+# def SignIn(request): 
     
-    if request.method == 'POST':
-       username=request.POST.get('username')
-       password=request.POST.get('password')
+#     if request.method == 'POST':
+#        username=request.POST.get('username')
+#        password=request.POST.get('password')
 
-       user = authenticate(request, username=username, password=password)
+#        user = authenticate(request, username=username, password=password)
        
-       if user is not None:
-          login(request, user)
-          return redirect('Client_Dash')
-       else:
-          messages.info(request, 'username OR password is incorrect')
+#        if user is not None:
+#           login(request, user)
+#           return redirect('Client_Dash')
+#        else:
+#           messages.info(request, 'username OR password is incorrect')
 
-    context = {}
-    return render(request, 'my_thesis/SignIn.html', context)
+#     context = {}
+#     return render(request, 'my_thesis/SignIn.html', context)
 
     
-    # return render(request,"my_thesis/SignIn.html")
+#     # return render(request,"my_thesis/SignIn.html")
 
-def SignUp(request):
-    form = CreateUserForm()
+# def SignUp(request):
+#     form = CreateUserForm()
 
-    if request.method == 'POST':
-        form = CreateUserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request,'Account was Created for ' + user)
-            return redirect('SignUp')
+#     if request.method == 'POST':
+#         form = CreateUserForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             user = form.cleaned_data.get('username')
+#             messages.success(request,'Account was Created for ' + user)
+#             return redirect('SignUp')
             
-    context = {'form':form}
-    return render(request, 'my_thesis/SignUp.html', context)
+#     context = {'form':form}
+#     return render(request, 'my_thesis/SignUp.html', context)
 
 
 

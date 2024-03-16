@@ -5,8 +5,6 @@ urlpatterns = [
     
     #ADMIN SIDE
     path('adminhome/', views.home, name="home"),
-    path('register/', views.registerPage, name="register"),
-    path('login/', views.loginPage, name="login"),
     path('logout/', views.logoutUser, name="logout"),
 
     path('products/', views.products, name='products'),
@@ -19,10 +17,11 @@ urlpatterns = [
    
 
     #CLIENT SIDE    
-
+    path('SignUp/', views.registerPage, name="SignUp"),
+    path('SignIn/', views.loginPage, name="SignIn"),
     path('', views.clientHome, name="Home"),
-    path("SignIn/", views.SignIn, name="SignIn"),
-    path("SignUp/", views.SignUp, name="SignUp"),
+    # path("SignIn/", views.SignIn, name="SignIn"),
+    # path("SignUp/", views.SignUp, name="SignUp"),
     path("Features_Insights/", views.Features_Insights, name="Features_Insights"),
     path("AboutUs_Contact/", views.AboutUs_Contact, name="AboutUs_Contact"),
     path("Client_Dash/", views.Client_Dash, name="Client_Dash"),
