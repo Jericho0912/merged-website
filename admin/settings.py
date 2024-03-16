@@ -132,3 +132,9 @@ STATICFILES_DIR = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+JAZZMIN_SETTINGS = {
+    'site_header': "ADMIN",
+    'site_brand': "ADMIN",
+    'site_copyright': "Hydro-site.com",
+}
