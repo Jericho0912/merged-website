@@ -32,6 +32,8 @@ class clientinfo(models.Model):
     def __str__(self):
         return self.fname
     
+    
+    
 
 # # for connections
 # class SensorData(models.Model):
