@@ -25,4 +25,5 @@ urlpatterns = [
     path("Features_Insights/", views.Features_Insights, name="Features_Insights"),
     path("AboutUs_Contact/", views.AboutUs_Contact, name="AboutUs_Contact"),
     path("Client_Dash/", views.Client_Dash, name="Client_Dash"),
+     path("Data/",views.connection, name="connection")
 ]
