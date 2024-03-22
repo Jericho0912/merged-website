@@ -78,7 +78,7 @@
             width: calc(100% - 0%); /* Adjust width to match the textboxes */
             border: none;
             border-radius: 5px;
-            margin-top: 20px;
+            margin-top: 5px;
             margin-left: 0; /* Adjust left margin */
         }
 
@@ -110,6 +110,30 @@
             margin-bottom: 20px; /* Add some space below the text */
             font-weight: 500;
         }
+
+        .errorlist {
+        color: red;
+        list-style: none; /* Remove default bullet points */
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+        margin-left: -18px;
+        margin-top: 12px;
+        }
+
+        .errorlist li {
+        position: relative; /* Enable positioning for pseudo-element */
+        padding-left: 18px; /* Increase padding to accommodate bullet size */
+        line-height: 1.5; /* Adjust line height for better alignment */
+}
+
+        .errorlist li::before {
+        content: "•"; /* Define bullet content */
+        position: absolute; /* Position the bullet absolutely */
+        left: 0; /* Align the bullet at the left margin */
+        top: 5px; /* Adjust vertical position if needed */
+        color: red; /* Match the error color */
+        }
+
     </style>
 </head>
 
@@ -162,9 +186,11 @@
                         </div>
                         
                     </form>
-                    <span>Already have an account <a href="{% url 'SignIn' %}">Login</a></span>
+                    <span>Already have an account? &nbsp; <a href="{% url 'SignIn' %}">Login</a></span>
                 </div>
-                {{form.errors}}
+                <ul class="errorlist">
+                    {{ form.errors }}
+                  </ul>
             </div>
         </section>
 
@@ -196,8 +222,8 @@
 //Query All input fields
 var form_fields = document.getElementsByTagName('input')
 form_fields[1].placeholder='Username..';
-form_fields[2].placeholder='firstname...';
-form_fields[3].placeholder='lastname...';
+form_fields[2].placeholder='First Name...';
+form_fields[3].placeholder='Last Name...';
 form_fields[4].placeholder='Enter password...';
 form_fields[5].placeholder='Re-enter Password...';
 

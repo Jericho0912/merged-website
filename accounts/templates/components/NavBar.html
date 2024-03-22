@@ -44,10 +44,19 @@
         font-family: 'Inter', sans-serif;
     }
 
+    #SignIn:hover {
+      background-color: #b56000; /* Darker shade on hover */
+    }
+
     #WhatWeDo {
         color: #18468B;
         font-weight: 600;
         font-family: 'Inter', sans-serif;
+    }
+
+    #WhatWeDo:hover {
+    font-weight: bold; /* Bolder font weight on hover */
+    padding: 2px; /* Add padding on hover */
     }
 
     #Features {
@@ -56,10 +65,20 @@
         font-family: 'Inter', sans-serif;
     }
 
+    #Features:hover{
+    font-weight: bold; /* Bolder font weight on hover */
+    padding: 2px; /* Add padding on hover */
+    }
+    
     #Insights {
         color: #18468B;
         font-weight: 600;
         font-family: 'Inter', sans-serif;
+    }
+
+    #Insights:hover{
+    font-weight: bold; /* Bolder font weight on hover */
+    padding: 2px; /* Add padding on hover */
     }
 
     #AboutUs {
@@ -68,11 +87,22 @@
         font-family: 'Inter', sans-serif;
     }
 
+    #AboutUs:hover{
+    font-weight: bold; /* Bolder font weight on hover */
+    padding: 2px; /* Add padding on hover */
+    }
+
     #Contact {
         color: #18468B;
         font-weight: 600;
         font-family: 'Inter', sans-serif;
     }
+
+    #Contact:hover{
+    font-weight: bold; /* Bolder font weight on hover */
+    padding: 2px; /* Add padding on hover */
+    }
+
     </style>
     <body>
       <header>
@@ -107,6 +137,28 @@
             </nav>
 
             <div class="">{%block content%} {%endblock%}</div>
+
+            <script>
+              $(document).ready(function() {
+                // Insights button click handler with scrolling
+                $('#Insights').click(function(event) {
+                  event.preventDefault(); // Prevent default link behavior (redirect)
+                  window.location.href = "{% url 'Features_Insights' %}#ThirdBox";
+                  setTimeout(() => {
+                    $(document).scrollTop($('#ThirdBox').offset().top);
+                  }, 100); // Adjust timeout if needed
+                });
+            
+                // Contact button click handler with scrolling
+                $('#Contact').click(function(event) {
+                  event.preventDefault(); // Prevent default link behavior (redirect)
+                  window.location.href = "{% url 'AboutUs_Contact' %}#ThirdBox";
+                  setTimeout(() => {
+                    $(document).scrollTop($('#ThirdBox').offset().top);
+                  }, 100); // Adjust timeout if needed
+                });
+              });
+            </script>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

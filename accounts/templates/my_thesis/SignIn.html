@@ -52,19 +52,6 @@
     margin-top: 80px;
 }
 
-#SIGNIN{
-    background-color: #2895E3;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: bolder;
-    padding-top: 10px;
-    font-family: 'Inter', sans-serif;
-    height:50px;
-    width:100px;
-    margin-top: 2px;
-    margin-left: 8px;
-}
-
 .EMAILADD{
     color: #CDCDCD;
     font-family: 'Inter', sans-serif;
@@ -132,8 +119,9 @@
   font-weight: bold;
   margin-left: 250px;
 }
-.signin_box{
-  background-color: #2895E3;
+
+.login_btn {
+            background-color: #2895E3;
             color: #FFFFFF;
             font-size: 16px;
             font-weight: bold;
@@ -146,11 +134,34 @@
             margin-left: 0; /* Adjust left margin */
 }
 
-.login_btn{
-            font-size: 16px;
-            font-weight: bold;
-            font-family: 'Inter', sans-serif;
-            margin-top: 6px;
+.login_btn:hover {
+    background-color: #1E77E6; /* Darker shade on hover */
+}
+
+.message {
+    color: red;
+    margin-top: 20px;
+}
+
+.signup {
+    margin-top: -20px;
+}
+
+.admin-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0050C9; /* Green background color */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20px 20px 0px 0px;
 }
 
 </style>
@@ -188,19 +199,34 @@
                 </form>
             </div>
         </div>
-        {% for message in messages %}
-        <center>
-            <p>{{message}}</p>
-        </center>
-        {% endfor %}
         <div class="mt-4">
-            <div class="d-flex justify-content-center links">
-                Don't have an account? <a href="{% url 'SignUp' %}" class="ml-2">Sign Up</a>
+            <div class="signup d-flex justify-content-center links">
+                Don't have an account? &nbsp; <a href="{% url 'SignUp' %}" class="ml-2"> Sign Up</a>
             </div>
         </div>
+        {% for message in messages %}
+        <center>
+            <p class="message">{{message}}</p>
+        </center>
+        {% endfor %}
     </section>
 
 </div>
+
+<script>
+    document.getElementById("Home_Insights").addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent default link behavior (redirect)
+      window.location.href = "{% url 'Features_Insights' %}#ThirdBox";
+      setTimeout(function() {
+        const targetElement = document.getElementById("ThirdBox");
+        if (targetElement) { // Check if element exists
+          targetElement.scrollIntoView({ behavior: "smooth" });
+        } else {
+          console.error("Element with ID 'ThirdBox' not found!");
+        }
+      }, 100); // Adjust timeout if needed
+    });
+  </script>
 
 </body>
 
