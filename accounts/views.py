@@ -255,3 +255,9 @@ def login_histories(request):
         </ul>
     """
     )
+
+def today(request):
+    """Shows todays current time and date."""
+    today = datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")
+    context = {'today': today}
+    return render(request, context)

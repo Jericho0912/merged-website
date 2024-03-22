@@ -123,6 +123,10 @@
     font-family: 'Inter', sans-serif;
 }
 
+.Logout{
+    font-weight: bold; /* Bolder font weight on hover */
+    padding: 2px; /* Add padding on hover */
+}
 </style>
 
 <header>
@@ -140,7 +144,7 @@
               <li class="nav-item">
                 <div class="nav-link active" aria-current="page" href="" id="Feedback" data-bs-toggle="modal" data-bs-target="#staticBackdrop"> <p class="TERMS_CONDITIONS"> <a href="#" style="text-align: right; text-decoration:none; color: #FF6002;" id="WelLog">Contact Us / Feedback / Concern</a>
                 <br>
-                <a class="nav-link active" aria-current="page" id="Date">February 13, 2024</a> 
+                <a class="nav-link active" aria-current="page" id="Date"> {% now "F j, Y" %}</a> 
               </li>
             </ul>
           </div>
@@ -170,24 +174,20 @@
 
 <section class="p-5" id="FirstBox">
     <div class="WelLog" style="text-align: right;">
-       <p id="Welcome">Welcome Back, {{request.user}} |<a class="nav-link" href="{% url "logout" %}">LogOut</a></p>
+       <p id="Welcome">Welcome Back, {{request.user}} |<a class="nav-link Logout" href="{% url "logout" %}">Log Out</a></p>
     </div>
 </section>
 
 <section class="p-5 mb-2" id="SecondBox">
     <!-- SECOND CONTAINER -->
         <div class="TextBox1">
-            <p id="BoxOne_FirstLine">Hi {{request.user}}</p>
-            <p id="BoxOne_SecondLine">We're glad you're here</p>
+            <p id="BoxOne_FirstLine">Hi {{request.user}}!</p>
+            <p id="BoxOne_SecondLine">We're glad you're here.</p>
         </div>
 </section>
 
 <section>
     {% include 'components/Energy_RPM.html' %}
-</section>
-
-<section>
-    {% include 'components/Battery.html' %}
 </section>
 
 <footer>
