@@ -13,6 +13,8 @@ from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth import login as django_login
 
+import serial
+
 #connection esp32
 def connection(request):
     ser=serial.Serial("COM3",115200)
@@ -23,7 +25,7 @@ def connection(request):
         "data" : data
     }
 
-    return render(request, "my_thessis/connection.html", context)
+    return render(request, "my_thessis/conn.html", context)
 
 # django_login(request, user)
 # Create your views here.
