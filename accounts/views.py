@@ -31,56 +31,56 @@ import os
 
 # Connection 2S3
 
-def view_data(request):
-    try:
-        # Create a session using environment variables
-        session = boto3.Session(
-            aws_access_key_id='',
-            aws_secret_access_key='',
-            region_name='us-east-1'
-        )
+# def view_data(request):
+#     try:
+#         # Create a session using environment variables
+#         session = boto3.Session(
+#             aws_access_key_id='',
+#             aws_secret_access_key='',
+#             region_name='us-east-1'
+#         )
 
-        # Create an S3 client
-        s3 = session.client('s3')
+#         # Create an S3 client
+#         s3 = session.client('s3')
 
-        # Define bucket and key
-        bucket_name = ''
-        file_key = ''
+#         # Define bucket and key
+#         bucket_name = ''
+#         file_key = ''
 
-        # Get the file object
-        file_obj = s3.get_object(Bucket=bucket_name, Key=file_key)
+#         # Get the file object
+#         file_obj = s3.get_object(Bucket=bucket_name, Key=file_key)
 
-        # Read the file content
-        file_content = file_obj['Body'].read().decode('utf-8')
+#         # Read the file content
+#         file_content = file_obj['Body'].read().decode('utf-8')
 
-        # Parse JSON data
-        data = json.loads(file_content)
+#         # Parse JSON data
+#         data = json.loads(file_content)
 
-        # Assuming your data contains temperature and humidity
-        temperature = data.get('temperature', 0)  # Default value 0 if not present
-        humidity = data.get('humidity', 0)  # Default value 0 if not present
+#         # Assuming your data contains temperature and humidity
+#         temperature = data.get('temperature', 0)  # Default value 0 if not present
+#         humidity = data.get('humidity', 0)  # Default value 0 if not present
         
-        # Prepare data for Chart.js
-        labels = ['Temperature', 'Humidity']
-        values = [temperature, humidity]
+#         # Prepare data for Chart.js
+#         labels = ['Temperature', 'Humidity']
+#         values = [temperature, humidity]
 
-        # Assuming your data contains timestamps
-        timestamps = data.get('timestamps', [])
+#         # Assuming your data contains timestamps
+#         timestamps = data.get('timestamps', [])
 
-        # Ensure timestamps is a list
-        if not isinstance(timestamps, list):
-            timestamps = [timestamps]
+#         # Ensure timestamps is a list
+#         if not isinstance(timestamps, list):
+#             timestamps = [timestamps]
 
-        context = {
-            'data': json.dumps({'labels': labels, 'values': values}),  # Data for Chart.js
-            'timestamps': timestamps  # Pass timestamps to the template
-        }
-        return render(request, 'my_thesis/Client_Dash.html', context)
+#         context = {
+#             'data': json.dumps({'labels': labels, 'values': values}),  # Data for Chart.js
+#             'timestamps': timestamps  # Pass timestamps to the template
+#         }
+#         return render(request, 'my_thesis/Client_Dash.html', context)
 
-    except ClientError as error:
-        print(f"Error getting S3 data: {error}")
-        context = {'error_message': 'An error occurred while retrieving data.'}
-        return render(request, 'Home.html', context)
+#     except ClientError as error:
+#         print(f"Error getting S3 data: {error}")
+#         context = {'error_message': 'An error occurred while retrieving data.'}
+#         return render(request, 'Home.html', context)
   
 # django_login(request, user)
 # Create your views here.
