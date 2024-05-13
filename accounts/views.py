@@ -35,8 +35,8 @@ def view_data(request):
     try:
         # Create a session using environment variables
         session = boto3.Session(
-            aws_access_key_id='AKIAWWM5EXONMRNZLZ74',
-            aws_secret_access_key='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',
+            aws_access_key_id='',
+            aws_secret_access_key='',
             region_name='us-east-1'
         )
 
@@ -44,8 +44,8 @@ def view_data(request):
         s3 = session.client('s3')
 
         # Define bucket and key
-        bucket_name = 'arduinodaybucket'
-        file_key = 'myKey'
+        bucket_name = ''
+        file_key = ''
 
         # Get the file object
         file_obj = s3.get_object(Bucket=bucket_name, Key=file_key)
