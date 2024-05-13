@@ -127,7 +127,27 @@
     font-weight: bold; /* Bolder font weight on hover */
     padding: 2px; /* Add padding on hover */
 }
+
+/* Third Box */
+
+#ThirdBox{
+    margin-top: 60px;
+}
+
+.TextBox2{
+    color: #FF6002;
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+}
+
+.timestamp{
+    margin-top: -110px;
+}
+
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <header>
     <nav class="navbar navbar-expand-lg justify-content-center">
@@ -186,9 +206,61 @@
         </div>
 </section>
 
-<section>
-    {% include 'components/Energy_RPM.html' %}
+<section class="p-5 mb-2" id="ThirdBox">
+    <!-- THIRD CONTAINER -->
+    <div class="TextBox2">
+        <p>Latest Sensor Readings <br> Data from S3:</p>
+        <div style="display: flex;">
+            <div style="flex: 1;">
+                <canvas id="sensorChart" width="200" height="200"></canvas> <!-- This is where the chart will be rendered -->
+            </div>
+            <div style="flex: 1;" class="timestamp">
+                <div id="timestampContainer">
+                    <p>Timestamps=</p>
+                    {% for timestamp in timestamps %}
+                        <p>{{ timestamp }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
+<script>
+    // Parse the data passed from Django view
+    var sensorData = JSON.parse("{{ data|escapejs }}");
+
+    // Get the canvas element
+    var ctx = document.getElementById('sensorChart').getContext('2d');
+
+    // Render the chart
+    var myChart = new Chart(ctx, {
+        type: 'bar', // or 'bar' for bar chart
+        data: {
+            labels: sensorData.labels,
+            datasets: [{
+                label: 'Sensor Readings',
+                data: sensorData.values,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: false, // Disable responsiveness
+            maintainAspectRatio: false, // Disable aspect ratio
+            width: 200, // Set the width of the chart
+            height: 200 // Set the height of the chart
+        }
+    });
+</script>
+
 
 <footer>
     {% include 'components/Footer.html' %}

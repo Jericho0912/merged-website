@@ -134,6 +134,7 @@
         color: red; /* Match the error color */
         }
 
+
     </style>
 </head>
 
@@ -148,7 +149,7 @@
                     <img class="BoxOne_Image2" src="{% static 'my_thesis/images/home/LogoHydroFlow.png' %}">
                     <form method="POST" action="">
                         {% csrf_token %}
-                        <div id="sign_up_text">Sign Up</div> <!-- "Sign Up" text -->
+                        <!-- <div id="sign_up_text">Sign Up</div> "Sign Up" text -->
                         <div class="input-group">
                             <div class="input-group-append">
                                 <!-- <span class="input-group-text"><i class="fas fa-user"></i></span> -->
@@ -188,9 +189,15 @@
                     </form>
                     <span>Already have an account? &nbsp; <a href="{% url 'SignIn' %}">Login</a></span>
                 </div>
-                <ul class="errorlist">
-                    {{ form.errors }}
-                  </ul>
+                {% if messages %}
+                <div class="messages">
+                    <ul class="errorlist">
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
             </div>
         </section>
 
@@ -221,12 +228,11 @@
 
 //Query All input fields
 var form_fields = document.getElementsByTagName('input')
-form_fields[1].placeholder='Username..';
+form_fields[1].placeholder='Username...';
 form_fields[2].placeholder='First Name...';
 form_fields[3].placeholder='Last Name...';
 form_fields[4].placeholder='Enter password...';
 form_fields[5].placeholder='Re-enter Password...';
-
 
 for (var field in form_fields){	
 form_fields[field].className += ' form-control'

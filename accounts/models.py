@@ -32,6 +32,10 @@ class clientinfo(models.Model):
     def __str__(self):
         return self.fname
     
+class LoginHistory(models.Model):
+
+    def __str__(self):
+        return self.fname
     
     
     

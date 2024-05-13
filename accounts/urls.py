@@ -16,8 +16,6 @@ urlpatterns = [
     path('update_info/<str:pk>', views.Updateinfo, name="update_info"),
     path('delete_info/<str:pk>', views.deleteinfo, name="delete_info"),
 
-   
-
     #CLIENT SIDE    
     path('SignUp/', views.registerPage, name="SignUp"),
     path('SignIn/', views.loginPage, name="SignIn"),
@@ -26,6 +24,10 @@ urlpatterns = [
     # path("SignUp/", views.SignUp, name="SignUp"),
     path("Features_Insights/", views.Features_Insights, name="Features_Insights"),
     path("AboutUs_Contact/", views.AboutUs_Contact, name="AboutUs_Contact"),
-    path("Client_Dash/", views.Client_Dash, name="Client_Dash"),
-     path("Data/",views.connection, name="connection")
+    path("Client_Dash/", views.view_data, name="Client_Dash"),
+
+    #CONNECTION
+    # path("Data/",views.view_data, name="connection")
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
