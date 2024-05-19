@@ -24,9 +24,9 @@ urlpatterns = [
     # path("SignUp/", views.SignUp, name="SignUp"),
     path("Features_Insights/", views.Features_Insights, name="Features_Insights"),
     path("AboutUs_Contact/", views.AboutUs_Contact, name="AboutUs_Contact"),
-    path("Client_Dash/", views.Client_Dash, name="Client_Dash"), # Pinalitan ko yong views.ClientDash, dapat views.data siya
+    path("Client_Dash/", views.Client_Dash, name="Client_Dash"),
 
-    # # CONNECTION
+    #CONNECTION
     # path("Data/",views.view_data, name="connection")
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
