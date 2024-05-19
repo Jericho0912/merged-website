@@ -193,10 +193,3 @@ JAZZMIN_UI_TWEAKS = {
         "success": "btn-success"
     }
 }
-
-# AWS_IOT_ENABLED = True
-# AWS_IOT_SERVER = "server.amazonaws.com"
-# AWS_IOT_CLIENT_ID = "esp32wokwi"
-# AWS_IOT_CERT_PATH = "/certificates/f816639c3507180fcb179c3c4e099bc5d28f69ded903f2b46336ecb17a5cda5f-certificate.pem.crt"
-# AWS_IOT_KEY_PATH = "/certificates/f816639c3507180fcb179c3c4e099bc5d28f69ded903f2b46336ecb17a5cda5f-private.pem.key"
-# AWS_IOT_ROOT_CERT_PATH = "/certificates/AmazonRootCA1.pem"
