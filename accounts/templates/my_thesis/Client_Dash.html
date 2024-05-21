@@ -127,7 +127,27 @@
     font-weight: bold; /* Bolder font weight on hover */
     padding: 2px; /* Add padding on hover */
 }
+
+/* Third Box */
+
+#ThirdBox{
+    margin-top: 60px;
+}
+
+.TextBox2{
+    color: #FF6002;
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: 'Inter', sans-serif;
+}
+
+.timestamp{
+    margin-top: -110px;
+}
+
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <header>
     <nav class="navbar navbar-expand-lg justify-content-center">
@@ -184,10 +204,6 @@
             <p id="BoxOne_FirstLine">Hi {{request.user}}!</p>
             <p id="BoxOne_SecondLine">We're glad you're here.</p>
         </div>
-</section>
-
-<section>
-    {% include 'components/Energy_RPM.html' %}
 </section>
 
 <footer>

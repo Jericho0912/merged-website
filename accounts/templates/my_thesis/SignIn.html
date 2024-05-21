@@ -175,7 +175,7 @@
         <div class="flex">
             <div class="TextBox2">
                 <img class="BoxOne_Image2" src="{% static 'my_thesis/images/home/LogoHydroFlow.png' %}">
-                <p id="TextSign"> Sign In</p>
+                <!-- <p id="TextSign"> Sign In</p> -->
                 <form method="POST" action="">
                     {% csrf_token %}
                     <div class="input-group mb-3">
@@ -197,7 +197,8 @@
                       </div>
                   </div>
                 </form>
-            </div>
+                {{forms.message}}
+            </div> 
         </div>
         <div class="mt-4">
             <div class="signup d-flex justify-content-center links">

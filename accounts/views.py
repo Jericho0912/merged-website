@@ -13,19 +13,21 @@ from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth import login as django_login
 
+from botocore.exceptions import ClientError
+
+from django.conf import settings
+
+from datetime import datetime, timedelta  # Import datetime module
+
 import serial
+import re
 
-#connection esp32
-def connection(request):
-    ser=serial.Serial("COM3",115200)
-    data=ser.readline().decode().strip()
-    ser.close()
+from django import template
+register = template.Library()
 
-    context = {
-        "data" : data
-    }
-
-    return render(request, "my_thessis/conn.html", context)
+import json
+import boto3
+import os
 
 # django_login(request, user)
 # Create your views here.
@@ -143,12 +145,25 @@ def registerPage(request):
     if request.method == 'POST':
         form = CreateUserForm(request.POST)
         if form.is_valid():
-            form.save()
-            user = form.cleaned_data.get('user')
-            messages.success(request,'Account was Created for ' + user)
-            return redirect('SignIn')
-            
-    context = {'form':form}
+            password1 = form.cleaned_data.get('password1')
+            password2 = form.cleaned_data.get('password2')
+
+            if password1 == password2:
+                username = form.cleaned_data.get('username')
+                if re.match(r'^[\w.@+-]+$', username):  # Updated regex to allow special characters commonly found in usernames
+                    form.save()
+                    user = form.cleaned_data.get('username')
+                    message = 'Account was Created for ' + user
+                    messages.success(request, message)
+                    return redirect('SignIn')
+                else:
+                    messages.error(request, 'Invalid characters in the username. Only letters, numbers, and @/./+/-/_ characters are allowed.')  # Updated error message for invalid characters in username
+            else:
+                messages.error(request, 'Passwords do not match.')  # Display error if passwords don't match
+        else:
+            messages.error(request, 'Invalid form submission.')
+
+    context = {'form': form}
     return render(request, 'my_thesis/SignUp.html', context)
 
 def loginPage(request): 
@@ -163,7 +178,7 @@ def loginPage(request):
           login(request, user)
           return redirect('Client_Dash')
        else:
-          messages.info(request, 'username OR password is incorrect')
+          messages.info(request, 'Username or Password is incorrect.')
 
     context = {}
     return render(request, 'my_thesis/SignIn.html', context)
